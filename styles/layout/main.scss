@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Montserrat&display=swap');
+
+main.container-maintain {
+  min-height: 60vh !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+h1, h2, h3, h4, h5 {
+  font-family: inherit;
+}
+.font-vi {
+  font-family: 'Montserrat', sans-serif !important;
+}
+.font-ja {
+  font-family: 'M PLUS 1p', sans-serif !important;
+}
+body {
+  background-image: url("assets/images/users/bg-nen.jpg");
+}
+
+.white-space-pre-line {
+  white-space: pre-line;
+}
+
+.white-space-pre-line::first-line {
+  line-height: 0;
+}
+
+.word-break-break-all {
+  word-break: break-word;
+}
+
+.overflow-wrap-anywhere {
+  overflow-wrap: anywhere;
+}
+
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
+.container-maintain {
+  min-width: 100%;
+  //min-height: 100vh;
+  background-color: #F2F2F2;
+  padding-top: 30px;
+  padding-bottom: 80px;
+}
+
+.min-height-auto {
+  min-height: auto !important;
+}
+
+.cursor-default {
+  cursor: default !important;
+}
+
+.cursor-text {
+  cursor: text !important;
+}
+
+.border-bottom-none {
+  border-bottom: none !important;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.color-black {
+  color: black !important;
+}
+
+.modal-content {
+  border-radius: 30px !important;
+}
