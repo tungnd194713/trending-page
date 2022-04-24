@@ -9,7 +9,7 @@
         <div class="col-12  col-lg-auto">
             <button type="button" class="btn rounded-pill float-end btn-home-search-job">
                 <img src="~/assets/images/users/icon_search.svg" alt="">
-                <span class="px-2">Search</span>
+                <span class="px-2" @click="test()">Search</span>
             </button>
         </div>
     </div>
@@ -20,429 +20,29 @@
     </div>
 
     <div class="row">
-        <div class="col-12 col-sm-6 col-lg-4 mb-2 mb-sm-3 mb-lg-3">
-            <div class="category text-center">Bóng đá</div>
-            <div class="box-home-content">
+        <div v-for="(item, index) in data" :key="index" class="col-12 col-sm-6 col-lg-4 mb-2 mb-sm-3 mb-lg-3">
+          <div class="category text-center">{{ item.category }}</div>
+          <div class="box-home-content">
                 <div class="img-content">
-                    <img src="~/assets/images/users/draft/ANH-1.jpg" class="item-img"/>
+                    <img :src="item.news[0].img" class="item-img"/>
                 </div>
                 <div class="bt-content">
-                    <div class="new-content">
+                    <div v-for="element in item.news" :key="element.id" class="new-content">
                         <div class="title-content">
                             <h4>
-                                <a href="#" class="only-2">
-                                    Video bóng đá Barcelona - Cadiz: Cú sốc đầu hiệp 2, tung cờ trắng đầu hàng (Vòng 32 La Liga)
+                                <a :href="element.url" class="only-2">
+                                    {{ element.title }}
                                 </a>
                             </h4>
                         </div>
                         <div class="desc-content">
-                            La Liga cũng chẳng thể mang lại niềm vui cho đội bóng xứ Catalunya.
-                        </div>
-                        <div class="semi-category">
-                            <a href="">
-                                La liga 2021-22
-                            </a>
+                            {{ element.description }}
                         </div>
                         <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Ronaldo báo tin buồn khiến triệu fan thương cảm, vắng mặt ở derby nước Anh
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Cực nóng MU đã đạt thỏa thuận với HLV Ten Hag, hồi hộp chờ công bố
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="date-content">
-                            18-04-2022
-                        </div>
-                    </div>
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Hat-trick của Ronaldo khiến sao trẻ Argentina mê mẩn như thế nào
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
+                            {{ element.date }}
                         </div>
                     </div>
                 </div>
-
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-2 mb-sm-3 mb-lg-3">
-            <div class="category text-center">Bóng đá</div>
-            <div class="box-home-content">
-                <div class="img-content">
-                    <img src="~/assets/images/users/draft/ANH-1.jpg" class="item-img"/>
-                </div>
-                <div class="bt-content">
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Video bóng đá Barcelona - Cadiz: Cú sốc đầu hiệp 2, tung cờ trắng đầu hàng (Vòng 32 La Liga)
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="desc-content">
-                            La Liga cũng chẳng thể mang lại niềm vui cho đội bóng xứ Catalunya.
-                        </div>
-                        <div class="semi-category">
-                            <a href="">
-                                La liga 2021-22
-                            </a>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Ronaldo báo tin buồn khiến triệu fan thương cảm, vắng mặt ở derby nước Anh
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Cực nóng MU đã đạt thỏa thuận với HLV Ten Hag, hồi hộp chờ công bố
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="date-content">
-                            18-04-2022
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-2 mb-sm-3 mb-lg-3">
-            <div class="category text-center">Bóng đá</div>
-            <div class="box-home-content">
-                <div class="img-content">
-                    <img src="~/assets/images/users/draft/ANH-1.jpg" class="item-img"/>
-                </div>
-                <div class="bt-content">
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Video bóng đá Barcelona - Cadiz: Cú sốc đầu hiệp 2, tung cờ trắng đầu hàng (Vòng 32 La Liga)
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="desc-content">
-                            La Liga cũng chẳng thể mang lại niềm vui cho đội bóng xứ Catalunya.
-                        </div>
-                        <div class="semi-category">
-                            <a href="">
-                                La liga 2021-22
-                            </a>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Ronaldo báo tin buồn khiến triệu fan thương cảm, vắng mặt ở derby nước Anh
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-4 mb-2 mb-sm-3 mb-lg-3">
-            <div class="category text-center">Bóng đá</div>
-            <div class="box-home-content">
-                <div class="img-content">
-                    <img src="~/assets/images/users/draft/ANH-1.jpg" class="item-img"/>
-                </div>
-                <div class="bt-content">
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Video bóng đá Barcelona - Cadiz: Cú sốc đầu hiệp 2, tung cờ trắng đầu hàng (Vòng 32 La Liga)
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="desc-content">
-                            La Liga cũng chẳng thể mang lại niềm vui cho đội bóng xứ Catalunya.
-                        </div>
-                        <div class="semi-category">
-                            <a href="">
-                                La liga 2021-22
-                            </a>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Ronaldo báo tin buồn khiến triệu fan thương cảm, vắng mặt ở derby nước Anh
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-2 mb-sm-3 mb-lg-3">
-            <div class="category text-center">Bóng đá</div>
-            <div class="box-home-content">
-                <div class="img-content">
-                    <img src="~/assets/images/users/draft/ANH-1.jpg" class="item-img"/>
-                </div>
-                <div class="bt-content">
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Video bóng đá Barcelona - Cadiz: Cú sốc đầu hiệp 2, tung cờ trắng đầu hàng (Vòng 32 La Liga)
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="desc-content">
-                            La Liga cũng chẳng thể mang lại niềm vui cho đội bóng xứ Catalunya.
-                        </div>
-                        <div class="semi-category">
-                            <a href="">
-                                La liga 2021-22
-                            </a>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Ronaldo báo tin buồn khiến triệu fan thương cảm, vắng mặt ở derby nước Anh
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-2 mb-sm-3 mb-lg-3">
-            <div class="category text-center">Bóng đá</div>
-            <div class="box-home-content">
-                <div class="img-content">
-                    <img src="~/assets/images/users/draft/ANH-1.jpg" class="item-img"/>
-                </div>
-                <div class="bt-content">
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Video bóng đá Barcelona - Cadiz: Cú sốc đầu hiệp 2, tung cờ trắng đầu hàng (Vòng 32 La Liga)
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="desc-content">
-                            La Liga cũng chẳng thể mang lại niềm vui cho đội bóng xứ Catalunya.
-                        </div>
-                        <div class="semi-category">
-                            <a href="">
-                                La liga 2021-22
-                            </a>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Ronaldo báo tin buồn khiến triệu fan thương cảm, vắng mặt ở derby nước Anh
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-4 mb-2 mb-sm-3 mb-lg-3">
-            <div class="category text-center">Bóng đá</div>
-            <div class="box-home-content">
-                <div class="img-content">
-                    <img src="~/assets/images/users/draft/ANH-1.jpg" class="item-img"/>
-                </div>
-                <div class="bt-content">
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Video bóng đá Barcelona - Cadiz: Cú sốc đầu hiệp 2, tung cờ trắng đầu hàng (Vòng 32 La Liga)
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="desc-content">
-                            La Liga cũng chẳng thể mang lại niềm vui cho đội bóng xứ Catalunya.
-                        </div>
-                        <div class="semi-category">
-                            <a href="">
-                                La liga 2021-22
-                            </a>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Ronaldo báo tin buồn khiến triệu fan thương cảm, vắng mặt ở derby nước Anh
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-2 mb-sm-3 mb-lg-3">
-            <div class="category text-center">Bóng đá</div>
-            <div class="box-home-content">
-                <div class="img-content">
-                    <img src="~/assets/images/users/draft/ANH-1.jpg" class="item-img"/>
-                </div>
-                <div class="bt-content">
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Video bóng đá Barcelona - Cadiz: Cú sốc đầu hiệp 2, tung cờ trắng đầu hàng (Vòng 32 La Liga)
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="desc-content">
-                            La Liga cũng chẳng thể mang lại niềm vui cho đội bóng xứ Catalunya.
-                        </div>
-                        <div class="semi-category">
-                            <a href="">
-                                La liga 2021-22
-                            </a>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Ronaldo báo tin buồn khiến triệu fan thương cảm, vắng mặt ở derby nước Anh
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-2 mb-sm-3 mb-lg-3">
-            <div class="category text-center">Bóng đá</div>
-            <div class="box-home-content">
-                <div class="img-content">
-                    <img src="~/assets/images/users/draft/ANH-1.jpg" class="item-img"/>
-                </div>
-                <div class="bt-content">
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Video bóng đá Barcelona - Cadiz: Cú sốc đầu hiệp 2, tung cờ trắng đầu hàng (Vòng 32 La Liga)
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="desc-content">
-                            La Liga cũng chẳng thể mang lại niềm vui cho đội bóng xứ Catalunya.
-                        </div>
-                        <div class="semi-category">
-                            <a href="">
-                                La liga 2021-22
-                            </a>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                    <div class="new-content">
-                        <div class="title-content">
-                            <h4>
-                                <a href="#" class="only-2">
-                                    Ronaldo báo tin buồn khiến triệu fan thương cảm, vắng mặt ở derby nước Anh
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="date-content">
-                            19-04-2022
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
@@ -504,8 +104,28 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
   name: 'IndexPage',
+
+  data() {
+    return {
+      data: []
+    }
+  },
+
+  async mounted() {
+    await axios.get('http://localhost:3000' + '/posts').then((res) => {
+        this.data = res.data
+      })
+    console.log(this.data)
+  },
+
+  methods: {
+
+  },
+
+
 }
 </script>
 <style lang='scss' scoped>
